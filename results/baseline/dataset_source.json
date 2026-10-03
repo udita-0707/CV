@@ -1,0 +1,12 @@
+{
+  "dataset_name": "NLM-Falciparum-Thin-Cell-Images",
+  "official_datasheet": "https://lhncbc.nlm.nih.gov/LHC-research/LHC-projects/image-processing/malaria-datasheet.html",
+  "archive_url": "https://data.lhncbc.nlm.nih.gov/public/Malaria/cell_images.zip",
+  "archive_sha256": "0a949556b2414159b5100192609805376654c4266d8d187be9b1922fad43c668",
+  "parasitized_mapping_url": "https://data.lhncbc.nlm.nih.gov/public/Malaria/patientid_cellmapping_parasitized.csv",
+  "parasitized_mapping_sha256": "d0367e513397404e980baee2a641bce9ce329a22e62ea9007962dfca2f8418d3",
+  "uninfected_mapping_url": "https://data.lhncbc.nlm.nih.gov/public/Malaria/patientid_cellmapping_uninfected.csv",
+  "uninfected_mapping_sha256": "a8577b21e7154724f4bbd18326218e2c63a99b22ab372b79a7530d36df6dab78",
+  "verified_utc": "2026-10-03T17:22:02.491319+00:00",
+  "archive_path": "reproduction/data/raw/cell_images.zip"
+}

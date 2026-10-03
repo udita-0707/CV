@@ -1,0 +1,6 @@
+run_id,protocol,positive_class,metric,mean,standard_deviation,n_folds,measured_at_utc
+m2_rajaraman_resnet50_feature_extractor,patient-grouped stratified 5-fold CV (official mapping IDs),Parasitized,accuracy,0.938978436909063,0.01946025239676018,5,2026-10-03T17:22:55.052013+00:00
+m2_rajaraman_resnet50_feature_extractor,patient-grouped stratified 5-fold CV (official mapping IDs),Parasitized,sensitivity_recall,0.942398854821272,0.03358044160168004,5,2026-10-03T17:22:55.054015+00:00
+m2_rajaraman_resnet50_feature_extractor,patient-grouped stratified 5-fold CV (official mapping IDs),Parasitized,specificity,0.9356404642079139,0.01302890773969203,5,2026-10-03T17:22:55.054066+00:00
+m2_rajaraman_resnet50_feature_extractor,patient-grouped stratified 5-fold CV (official mapping IDs),Parasitized,auc,0.9832212914774701,0.008647555224830563,5,2026-10-03T17:22:55.054106+00:00
+m2_rajaraman_resnet50_feature_extractor,patient-grouped stratified 5-fold CV (official mapping IDs),Parasitized,f1,0.9390157880462497,0.020341466089851913,5,2026-10-03T17:22:55.054151+00:00

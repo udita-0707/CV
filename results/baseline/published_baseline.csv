@@ -1,0 +1,9 @@
+source,paper_location,protocol,metric,published_value
+"Rajaraman et al. 2018, supplied paper1 summary","Table 6, proposed model, patient level",patient-level 5-fold CV,accuracy,0.959
+"Rajaraman et al. 2018, supplied paper1 summary","Table 6, proposed model, patient level",patient-level 5-fold CV,sensitivity_recall,0.947
+"Rajaraman et al. 2018, supplied paper1 summary","Table 6, proposed model, patient level",patient-level 5-fold CV,specificity,0.972
+"Rajaraman et al. 2018, supplied paper1 summary","Table 6, proposed model, patient level",patient-level 5-fold CV,auc,0.991
+"Rajaraman et al. 2018, supplied paper1 summary","Table 6, proposed model, cell level",cell-level comparison,accuracy,0.986
+"Rajaraman et al. 2018, supplied paper1 summary","Table 6, proposed model, cell level",cell-level comparison,sensitivity_recall,0.981
+"Rajaraman et al. 2018, supplied paper1 summary","Table 6, proposed model, cell level",cell-level comparison,specificity,0.992
+"Rajaraman et al. 2018, supplied paper1 summary","Table 6, proposed model, cell level",cell-level comparison,auc,0.999

@@ -1,0 +1,47 @@
+{
+  "python": "3.12.13 (main, Mar 10 2026, 18:18:07) [Clang 21.1.4 ]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "libraries": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "Pillow": "12.3.0",
+    "matplotlib": "3.11.2",
+    "torch": "2.14.1",
+    "torchvision": "0.29.1"
+  },
+  "hardware": {
+    "compute_device": "mps",
+    "mps_available": true,
+    "cuda_available": false,
+    "machine": "arm64",
+    "processor": "arm",
+    "cpu_brand": "Apple M2",
+    "memory_bytes": "8589934592"
+  },
+  "config": {
+    "seed": 42,
+    "n_splits": 5,
+    "image_size": 224,
+    "batch_size": 32,
+    "classifier_batch_size": 128,
+    "epochs": 20,
+    "learning_rate": 0.01,
+    "momentum": 0.9,
+    "weight_decay": 0.0001,
+    "hidden_units": 512,
+    "dropout": 0.5,
+    "positive_class": "Parasitized",
+    "pretrained_weights": "ResNet50_Weights.IMAGENET1K_V2"
+  },
+  "runtime_seconds_this_run": 53.2,
+  "completed_utc": "2026-10-03T17:24:23.256165+00:00",
+  "runtime_history": {
+    "initial_full_run_seconds_including_feature_extraction": 289.3,
+    "notebook_end_to_end_reexecution_seconds_using_verified_feature_cache": 53.2
+  },
+  "run_log_files": [
+    "reproduction/logs/m2_baseline_run.log",
+    "reproduction/logs/notebook_execution.log"
+  ]
+}

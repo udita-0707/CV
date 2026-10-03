@@ -1,0 +1,6 @@
+fold,train_samples,test_samples,train_parasitized,train_uninfected,test_parasitized,test_uninfected,train_patients,test_patients,patient_overlap
+1,22061,5497,11027,11034,2752,2745,161,40,0
+2,22038,5520,11007,11031,2772,2748,161,40,0
+3,22014,5544,11045,10969,2734,2810,160,41,0
+4,22075,5483,11034,11041,2745,2738,161,40,0
+5,22044,5514,11003,11041,2776,2738,161,40,0

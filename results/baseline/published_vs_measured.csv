@@ -1,0 +1,5 @@
+source,paper_location,protocol,metric,published_value,measured_mean,measured_fold_sd,measured_minus_published
+"Rajaraman et al. 2018, supplied paper1 summary","Table 6, proposed model, patient level",patient-level 5-fold CV,accuracy,0.959,0.938978436909063,0.01946025239676018,-0.020021563090936945
+"Rajaraman et al. 2018, supplied paper1 summary","Table 6, proposed model, patient level",patient-level 5-fold CV,sensitivity_recall,0.947,0.942398854821272,0.03358044160168004,-0.0046011451787280055
+"Rajaraman et al. 2018, supplied paper1 summary","Table 6, proposed model, patient level",patient-level 5-fold CV,specificity,0.972,0.9356404642079139,0.01302890773969203,-0.03635953579208606
+"Rajaraman et al. 2018, supplied paper1 summary","Table 6, proposed model, patient level",patient-level 5-fold CV,auc,0.991,0.9832212914774701,0.008647555224830563,-0.007778708522529931
