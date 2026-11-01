@@ -1,7 +1,7 @@
 {
   "intervention": "Patient-ID-stratified re-aggregation of the frozen M2 out-of-fold predictions (evaluation/reporting only)",
   "pre_registration": {
-    "source": "milestones/M3/hypothesis.md",
+    "source": "milestones/m3/hypothesis.md",
     "recorded": "3 October 2026 (Asia/Kolkata)",
     "primary_metric": "per-fold Patient-ID-macro sensitivity (IDs with >= 1 Parasitized cell) minus pooled cell-level sensitivity",
     "predicted_mean_difference_pp": [
