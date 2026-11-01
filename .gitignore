@@ -1,76 +1,89 @@
-# -----------------------
-# Python
-# -----------------------
+# =====================================================================
+# Local environment, caches, editors, OS
+# =====================================================================
 .venv/
 venv/
 env/
 __pycache__/
 *.py[cod]
-*.pyo
-*.pyd
-
-# -----------------------
-# Jupyter
-# -----------------------
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
 .ipynb_checkpoints/
-
-# -----------------------
-# OS / editor
-# -----------------------
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
+*.swp
+tmp/
+temp/
 
-# -----------------------
-# Environment / secrets
-# -----------------------
+# Logs
+logs/
+*.log
+
+# Secrets
 .env
 .env.*
 !.env.example
 
-# -----------------------
-# Dataset storage
-# -----------------------
+# =====================================================================
+# Data and large artefacts
+# =====================================================================
 data/raw/
 data/interim/
 data/processed/
 
-# -----------------------
-# Logs
-# -----------------------
-logs/
-*.log
-
-# -----------------------
-# Model artifacts
-# -----------------------
+# Model weights and arrays (results/baseline/*.pt, cached features)
 *.pt
 *.pth
 *.ckpt
 *.onnx
 *.h5
 *.safetensors
-
-# -----------------------
-# Large generated arrays
-# -----------------------
 *.npy
 *.npz
 
-# -----------------------
-# Temporary/cache
-# -----------------------
-tmp/
-temp/
-.cache/
+# LaTeX build files (paper/main.pdf stays tracked)
+*.aux
+*.bbl
+*.blg
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.xdv
 
-# -----------------------
 # Python build/test
-# -----------------------
 build/
 dist/
 *.egg-info/
-.pytest_cache/
 .coverage
 htmlcov/
+
+# =====================================================================
+# Study and personal material (kept locally, not part of the project)
+# =====================================================================
+# Viva preparation
+viva_prep.md
+viva_prep.tmpl.md
+
+# Prompts and AI-agent files
+prompts/
+*.prompt.md
+CLAUDE.md
+.claude/
+
+# Personal notes
+notes/
+personal_notes*.md
+
+# Course handout
+docs/course_handout.docx
+*.docx
+
+# Draft decks
+*.pptx
+ppt_updates.md
