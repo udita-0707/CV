@@ -8,7 +8,7 @@ cd "$(dirname "$0")/.."
 PY=.venv/bin/python
 mkdir -p logs
 
-rm -rf -- results/m4 results/m5 paper/generated paper/figures paper/main.pdf
+rm -rf -- results/m4 results/m5 paper/generated paper/figures paper/main.pdf presentation/M4_M5/slides.pdf presentation/M4_M5/slides.html presentation/M4_M5/assets/charts
 
 $PY -m src.run_m4 | tee logs/m4_run.log
 $PY -m src.run_m5 | tee logs/m5_run.log
@@ -17,6 +17,7 @@ $PY -m pytest -q | tee logs/tests.log
 $PY -m src.render_reports
 $PY paper/make_tables.py
 (cd paper && tectonic -X compile main.tex)
+$PY presentation/M4_M5/build_slides.py
 
 git diff --exit-code --stat -- results/baseline milestones/M3
 echo "Frozen M2 baseline and M3 pre-registration unchanged."

@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>M4/M5 defence</title>
+<!-- Rendered to slides.html and slides.pdf by build_slides.py; every placeholder value comes from results/. -->
+<style>
+@font-face { font-family: "Carlito"; src: url("assets/fonts/Carlito-Regular.ttf"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "Carlito"; src: url("assets/fonts/Carlito-Bold.ttf"); font-weight: 700; font-style: normal; }
+@font-face { font-family: "Carlito"; src: url("assets/fonts/Carlito-Italic.ttf"); font-weight: 400; font-style: italic; }
+@page { size: 10in 5.625in; margin: 0; }
+:root {
+  --navy: #14213D; --ink: #1E2430; --paper: #F4F1EA; --teal: #1B998B; --coral: #E4572E;
+  --coral-tint: #FBE3DB; --line: #E5E7EB; --muted: #9CA3AF; --muted2: #6B7280; --ice: #DDE5EE;
+  --navy-2: #22315A;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #fff; }
+body { font-family: "Carlito", Calibri, sans-serif; color: var(--ink); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.slide { position: relative; width: 10in; height: 5.625in; overflow: hidden; background: #fff; break-after: page; }
+.slide:last-child { break-after: auto; }
+@media screen { body { background: #d9dce1; } .slide { margin: 24px auto; box-shadow: 0 2px 10px rgba(0,0,0,.18); } }
+.abs { position: absolute; }
+.serif { font-family: Georgia, serif; }
+
+/* content-slide frame (matches the M2/M3 deck grid) */
+.kicker { position: absolute; left: .6in; top: .3in; font-size: 10pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--teal); }
+.title { position: absolute; left: .6in; top: .53in; width: 8.2in; font-family: Georgia, serif; font-size: 25pt; line-height: 1.15; color: var(--navy); font-weight: 400; }
+.rule { position: absolute; left: .6in; top: 1.2in; width: .8in; height: .05in; background: var(--coral); }
+.logo { position: absolute; left: 9in; top: .3in; width: .42in; height: .42in; }
+.footer { position: absolute; left: .6in; top: 5.2in; font-size: 9pt; color: var(--muted); }
+.pageno { position: absolute; left: 9in; top: 5.19in; width: .4in; text-align: right; font-size: 10pt; color: var(--muted); }
+
+/* components */
+.card { position: absolute; background: var(--paper); padding: .14in .18in; }
+.navycard { position: absolute; background: var(--navy); color: #fff; padding: .22in .26in; }
+.k { font-size: 10pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--teal); }
+.k.coral { color: var(--coral); } .k.navy { color: var(--navy); } .k.grey { color: var(--muted2); }
+.num { font-family: Georgia, serif; color: var(--teal); line-height: 1.05; }
+.lbl { font-size: 11pt; color: var(--muted2); line-height: 1.25; }
+.txt { font-size: 13pt; line-height: 1.32; color: var(--ink); }
+.txt b, .lbl b { color: var(--navy); }
+.small { font-size: 10pt; color: var(--muted2); line-height: 1.3; }
+.center { text-align: center; }
+.strip { position: absolute; left: 0; top: 0; right: 0; height: .07in; }
+.dot { display: inline-flex; align-items: center; justify-content: center; width: .34in; height: .34in; border-radius: 50%; background: var(--coral); color: #fff; font-weight: 700; font-size: 13pt; flex: none; }
+.check { display: inline-flex; align-items: center; justify-content: center; width: .26in; height: .26in; border-radius: 50%; background: var(--teal); color: #fff; font-weight: 700; font-size: 11pt; flex: none; }
+.check.coral { background: var(--coral); }
+.row { display: flex; align-items: flex-start; gap: .14in; }
+.chart { position: absolute; }
+.crop { width: .8in; height: .8in; border-radius: 6px; object-fit: cover; display: block; }
+
+/* IF / THEN / BECAUSE rows */
+.ifrow { position: absolute; left: .6in; width: 8.8in; height: .58in; display: flex; }
+.ifrow .lab { width: 1.5in; color: #fff; font-size: 14pt; font-weight: 700; display: flex; align-items: center; justify-content: center; letter-spacing: .04em; }
+.ifrow .body { flex: 1; background: var(--paper); font-size: 14pt; display: flex; align-items: center; padding: 0 .2in; color: var(--ink); }
+
+/* dark slides */
+.dark { background: var(--navy); color: #fff; }
+.dark .stripe { position: absolute; left: 0; top: 0; width: .25in; height: 100%; background: var(--teal); }
+</style>
+</head>
+<body>
+
+<!-- ============================================================ 1 TITLE -->
+<section class="slide dark">
+  <div class="stripe"></div>
+  <div class="abs" style="left:.8in; top:.7in; width:5.9in;">
+    <div class="k" style="font-size:12pt;">CSA431 Computer Vision · M4 + M5</div>
+    <div class="serif" style="font-size:33pt; line-height:1.12; margin-top:.14in;">Does cell-weighted sensitivity hide hard <span style="white-space:nowrap;">Patient-IDs?</span></div>
+    <div style="width:1.2in; height:.06in; background:var(--coral); margin-top:.26in;"></div>
+    <div style="font-size:15pt; line-height:1.45; color:var(--ice); margin-top:.24in;">M4: one pre-registered evaluation change, plus ablations<br>M5: failure analysis, IEEE paper and defence</div>
+  </div>
+  <div class="abs" style="left:7.05in; top:.95in; width:2.5in;">{{html:title_cells}}</div>
+  <div class="abs" style="left:.8in; top:4.2in; font-size:12pt; color:var(--muted);">Dataset: NIH / NLM thin-smear cells, {{n_rows}} images · Base paper: Rajaraman et al., 2018, PeerJ 6:e4568</div>
+  <div class="abs" style="left:.8in; top:4.6in; font-size:13pt;">Presenters: Udita (230082) · Aman Kumar (230064)</div>
+  <div class="abs" style="left:.8in; top:5.0in; font-size:12pt; color:var(--muted);">Rishihood University</div>
+</section>
+
+<!-- ============================================================ 2 MOTIVATION -->
+<section class="slide">
+  <div class="kicker">Motivation</div>
+  <div class="title">The question M4 answers</div>
+  <div class="rule"></div>
+  <img class="logo" src="assets/logo.png" alt="">
+  <div class="card center" style="left:.6in; top:1.45in; width:2.05in; height:1.05in;">
+    <div class="num" style="font-size:28pt; color:var(--muted2);">{{pub_cell_acc}}</div>
+    <div class="lbl">accuracy, cell-level split<br>(Rajaraman, Table 6)</div>
+  </div>
+  <div class="abs" style="left:2.66in; top:1.72in; width:.23in; text-align:center; font-size:18pt; color:var(--coral);">→</div>
+  <div class="card center" style="left:2.9in; top:1.45in; width:2.05in; height:1.05in;">
+    <div class="num" style="font-size:28pt;">{{pub_acc}}</div>
+    <div class="lbl">accuracy, patient-level split<br>(Rajaraman, Table 6)</div>
+  </div>
+  <div class="abs txt" style="left:.6in; top:2.78in; width:4.35in; font-size:14pt;">
+    <div class="row" style="margin-bottom:.14in;"><span class="check">✓</span><span>Same-source cells share stain, lighting and focus, so cells are not independent.</span></div>
+    <div class="row" style="margin-bottom:.14in;"><span class="check">✓</span><span>A pooled, cell-weighted mean can be carried by a few large Patient-IDs.</span></div>
+    <div class="row"><span class="check">✓</span><span>Course rules: predict first; report sensitivity + AUC; no clinical claims.</span></div>
+  </div>
+  <div class="navycard" style="left:5.2in; top:1.45in; width:4.2in; height:3.25in;">
+    <div class="k" style="font-size:11pt;">Open question</div>
+    <div class="serif" style="font-size:20pt; line-height:1.3; margin-top:.16in;">Under leakage-free folds, does a pooled mean hide Patient-IDs with concentrated false negatives?</div>
+    <div style="position:absolute; left:.26in; bottom:.22in; right:.26in; font-size:12pt; color:var(--ice); line-height:1.3;">Answered by re-reading the frozen M2 predictions. No new model, no retraining.</div>
+  </div>
+  <div class="footer">CSA431 · M4 implementation + M5 failure analysis</div><div class="pageno">2</div>
+</section>
+
+<!-- ============================================================ 3 M2 RECAP -->
+<section class="slide">
+  <div class="kicker">M2 recap</div>
+  <div class="title">What we reproduced</div>
+  <div class="rule"></div>
+  <img class="logo" src="assets/logo.png" alt="">
+  <div class="card center" style="left:.6in; top:1.45in; width:2.05in; height:1.08in;"><div class="num" style="font-size:26pt;">{{m2_sens_mean}}</div><div class="lbl">sensitivity<br>paper {{pub_sens}} · Δ {{delta_sens}}</div></div>
+  <div class="card center" style="left:2.83in; top:1.45in; width:2.05in; height:1.08in;"><div class="num" style="font-size:26pt;">{{m2_auc_mean}}</div><div class="lbl">AUC<br>paper {{pub_auc}} · Δ {{delta_auc}}</div></div>
+  <div class="card center" style="left:5.06in; top:1.45in; width:2.05in; height:1.08in;"><div class="num" style="font-size:26pt;">{{m2_acc_mean}}</div><div class="lbl">accuracy<br>paper {{pub_acc}} · Δ {{delta_acc}}</div></div>
+  <div class="card center" style="left:7.29in; top:1.45in; width:2.05in; height:1.08in;"><div class="num" style="font-size:26pt;">{{m2_spec_mean}}</div><div class="lbl">specificity<br>paper {{pub_spec}} · Δ {{delta_spec}}</div></div>
+  <div class="abs" style="left:.6in; top:2.78in; width:8.74in; display:flex; align-items:center; justify-content:space-between;">
+    <div class="center" style="width:1.85in;"><div style="font-size:14pt; font-weight:700; color:var(--navy);">Frozen ResNet-50</div><div class="lbl">ImageNet weights</div></div>
+    <div style="font-size:18pt; color:var(--coral);">→</div>
+    <div class="center" style="width:1.85in;"><div style="font-size:14pt; font-weight:700; color:var(--navy);">2,048 features</div><div class="lbl">{{cfg_image_size}}×{{cfg_image_size}} input</div></div>
+    <div style="font-size:18pt; color:var(--coral);">→</div>
+    <div class="center" style="width:1.85in;"><div style="font-size:14pt; font-weight:700; color:var(--navy);">FC 2048→{{cfg_hidden_units}}→1</div><div class="lbl">dropout {{cfg_dropout}}, {{cfg_epochs}} epochs</div></div>
+    <div style="font-size:18pt; color:var(--coral);">→</div>
+    <div class="center" style="width:1.85in;"><div style="font-size:14pt; font-weight:700; color:var(--navy);">Threshold 0.5</div><div class="lbl">Parasitized = positive</div></div>
+  </div>
+  <div class="abs" style="left:.6in; top:3.68in; width:8.8in; height:1.25in; border:1.5px solid var(--teal); padding:.16in .22in;">
+    <div class="txt">Five folds grouped by the official NLM Patient-ID key ({{n_ids}} IDs), zero train/test overlap, seed {{cfg_seed}}.</div>
+    <div class="txt" style="margin-top:.08in;"><b>Approximate reproduction:</b> closest on sensitivity, lower on specificity. The paper's folds, feature layer and search were not available to us. These frozen out-of-fold predictions are the only input to M4 and M5.</div>
+  </div>
+  <div class="footer">CSA431 · M4 implementation + M5 failure analysis</div><div class="pageno">3</div>
+</section>
+
+<!-- ============================================================ 4 PRE-REGISTRATION -->
+<section class="slide">
+  <div class="kicker">Pre-registration · 3 Oct 2026</div>
+  <div class="title">Hypothesis and decision rule</div>
+  <div class="rule"></div>
+  <img class="logo" src="assets/logo.png" alt="">
+  <div class="abs small" style="right:.6in; top:1.12in; text-align:right;">Saved before any M4 code · first committed in <b style="color:var(--navy);">{{prereg_commit}}</b>, {{prereg_commit_date}}</div>
+  <div class="ifrow" style="top:1.45in;"><div class="lab" style="background:var(--teal);">IF</div><div class="body">the frozen M2 predictions are summarised per official Patient-ID within each fold</div></div>
+  <div class="ifrow" style="top:2.12in;"><div class="lab" style="background:var(--navy);">THEN</div><div class="body">macro sensitivity will be lower than pooled sensitivity, by about 1 to 3 pp</div></div>
+  <div class="ifrow" style="top:2.79in;"><div class="lab" style="background:var(--coral);">BECAUSE</div><div class="body">large IDs dominate a cell-weighted mean, so hard small IDs can disappear inside it</div></div>
+  <div class="card" style="left:.6in; top:3.58in; width:2.8in; height:1.12in;"><div class="strip" style="background:var(--teal);"></div><div style="font-size:15pt; font-weight:700; color:var(--navy); margin-top:.04in;">Supported</div><div class="txt" style="font-size:12.5pt;">≥ 4 of 5 folds negative <b>and</b> <span style="white-space:nowrap;">mean ≤ −1.68 pp</span></div></div>
+  <div class="card" style="left:3.6in; top:3.58in; width:2.8in; height:1.12in;"><div class="strip" style="background:var(--coral);"></div><div style="font-size:15pt; font-weight:700; color:var(--navy); margin-top:.04in;">Unsupported</div><div class="txt" style="font-size:12.5pt;">≥ 4 of 5 folds positive <b>and</b> <span style="white-space:nowrap;">mean ≥ +1.68 pp</span></div></div>
+  <div class="card" style="left:6.6in; top:3.58in; width:2.8in; height:1.12in;"><div class="strip" style="background:var(--muted);"></div><div style="font-size:15pt; font-weight:700; color:var(--navy); margin-top:.04in;">Inconclusive</div><div class="txt" style="font-size:12.5pt;">anything else, including a smaller negative mean</div></div>
+  <div class="abs small" style="left:.6in; top:4.82in; width:8.8in;">−1.68 pp is half the M2 sensitivity fold SD ({{m2_sens_sd}}). Macro uses the {{n_ids_pos}} IDs with Parasitized cells; the other {{n_ids_negonly}} are counted, not dropped.</div>
+  <div class="footer">CSA431 · M4 implementation + M5 failure analysis</div><div class="pageno">4</div>
+</section>
+
+<!-- ============================================================ 5 METHOD -->
+<section class="slide">
+  <div class="kicker">Method · M4</div>
+  <div class="title">One change: how the same rows are averaged</div>
+  <div class="rule"></div>
+  <img class="logo" src="assets/logo.png" alt="">
+  <img class="chart" src="assets/charts/per_id_strip.png" style="left:.5in; top:1.42in; width:5.35in;" alt="Per-Patient-ID sensitivity per fold">
+  <div class="card" style="left:6.1in; top:1.45in; width:3.3in; height:.92in;"><div class="k coral">Pooled · M2</div><div class="txt" style="font-size:12.5pt; margin-top:.04in;">Every <b>cell</b> counts once:<br>ΣTP / Σ(TP + FN)</div></div>
+  <div class="card" style="left:6.1in; top:2.49in; width:3.3in; height:.92in;"><div class="k navy">Macro · M4</div><div class="txt" style="font-size:12.5pt; margin-top:.04in;">Every <b>Patient-ID</b> counts once:<br>mean of TP<sub>i</sub> / (TP<sub>i</sub> + FN<sub>i</sub>)</div></div>
+  <div class="abs txt" style="left:6.1in; top:3.56in; width:3.3in; font-size:12.5pt;">
+    <div class="row" style="margin-bottom:.07in; align-items:center;"><span class="check">✓</span><span>Model, features, probabilities fixed</span></div>
+    <div class="row" style="margin-bottom:.07in; align-items:center;"><span class="check">✓</span><span>0.5 threshold, labels, folds fixed</span></div>
+    <div class="row" style="align-items:center;"><span class="check coral">≠</span><span><b>Only the aggregation changes</b></span></div>
+  </div>
+  <div class="abs" style="left:6.1in; top:4.62in; width:3.3in; background:var(--navy); color:#fff; font-size:10.5pt; padding:.07in .14in; line-height:1.3;">Reuse checks PASS: {{n_rows}} rows, folds identical, pooled metrics match to {{reuse_max_abs}}</div>
+  <div class="footer">CSA431 · M4 implementation + M5 failure analysis</div><div class="pageno">5</div>
+</section>
+
+<!-- ============================================================ 6 RESULT -->
+<section class="slide">
+  <div class="kicker">Primary result</div>
+  <div class="title">Right direction, short of the threshold</div>
+  <div class="rule"></div>
+  <img class="logo" src="assets/logo.png" alt="">
+  <img class="chart" src="assets/charts/paired_differences.png" style="left:.45in; top:1.42in; width:5.65in;" alt="Paired differences per fold">
+  <div class="card" style="left:6.35in; top:1.45in; width:3.05in; height:.98in;"><div class="k grey">Predicted (M3)</div><div class="num" style="font-size:22pt; color:var(--navy); margin-top:.05in;">−1 to −3 pp</div><div class="lbl">mean macro − pooled</div></div>
+  <div class="card" style="left:6.35in; top:2.55in; width:3.05in; height:1.04in;"><div class="k">Observed (M4)</div><div class="num" style="font-size:24pt; margin-top:.04in;">{{mean_diff_pp}}</div><div class="lbl">{{n_negative_folds}} of {{n_folds}} folds negative · {{within_band}} the range</div></div>
+  <div class="navycard" style="left:6.35in; top:3.71in; width:3.05in; height:1.1in; padding:.13in .18in;"><div class="k">Verdict · M3 rule</div><div class="serif" style="font-size:22pt; margin-top:.04in; letter-spacing:.01em;">{{verdict}}</div><div style="font-size:10.5pt; color:var(--ice);">mean must be ≤ −1.68 pp; short by {{shortfall_pp}}</div></div>
+  <div class="abs small" style="left:.6in; top:4.9in; width:8.8in;">Mean: 95% cluster-bootstrap CI {{boot_ci}} · across-fold t-interval {{t_ci}} · n = 5 folds, so no significance claims</div>
+  <div class="footer">CSA431 · M4 implementation + M5 failure analysis</div><div class="pageno">6</div>
+</section>
+
+<!-- ============================================================ 7 ABLATIONS -->
+<section class="slide">
+  <div class="kicker">Ablations · exploratory</div>
+  <div class="title">The verdict is fragile, not reversed</div>
+  <div class="rule"></div>
+  <img class="logo" src="assets/logo.png" alt="">
+  <div class="card" style="left:.6in; top:1.45in; width:2.8in; height:1.6in;"><div class="k">A1 · Weighting</div><div class="num" style="font-size:21pt; margin:.06in 0;">= pooled</div><div class="txt" style="font-size:12pt;">Weighting each ID by its cell count gives back the pooled value exactly: the gap <i>is</i> the weighting.</div></div>
+  <div class="card" style="left:3.6in; top:1.45in; width:2.8in; height:1.6in;"><div class="k">A2 · Eligibility</div><div class="num" style="font-size:21pt; margin:.06in 0; white-space:nowrap;">{{a2_k10_mean_n}} / {{a2_k25_mean_n}} pp</div><div class="txt" style="font-size:12pt;">Mean with ≥ 10 / ≥ 25 Parasitized cells per ID: one variant passes the threshold, one does not.</div></div>
+  <div class="card" style="left:6.6in; top:1.45in; width:2.8in; height:1.6in;"><div class="k">A3 · Leave one ID out</div><div class="num" style="font-size:21pt; margin:.06in 0;">{{a3_flips}} of {{a3_deletions}}</div><div class="txt" style="font-size:12pt;">single-ID deletions flip the verdict: {{a3_flip_ids}}.</div></div>
+  <div class="card" style="left:.6in; top:3.25in; width:2.8in; height:1.6in;"><div class="k">A4 · Cluster bootstrap</div><div class="num" style="font-size:21pt; margin:.06in 0;">{{boot_ci}}</div><div class="txt" style="font-size:12pt;">95% CI for the mean ({{boot_resamples}} resamples): excludes 0, includes −1.68 pp.</div></div>
+  <div class="card" style="left:3.6in; top:3.25in; width:2.8in; height:1.6in;"><div class="k">A5 · Specificity</div><div class="num" style="font-size:21pt; margin:.06in 0;">{{a5_spec_mean}}</div><div class="txt" style="font-size:12pt;">Every ID has {{nneg_min}}–{{nneg_max}} Uninfected cells, so weighting cannot move specificity.</div></div>
+  <div class="navycard" style="left:6.6in; top:3.25in; width:2.8in; height:1.6in; padding:.16in .2in;"><div class="k">Takeaway</div><div class="serif" style="font-size:14pt; line-height:1.28; margin-top:.07in;">Planned before computing; exploratory only.</div><div style="font-size:10.5pt; color:var(--ice); margin-top:.1in;">Pre-registered verdict stands</div><div class="serif" style="font-size:18pt; color:var(--coral);">{{verdict}}</div></div>
+  <div class="footer">CSA431 · M4 implementation + M5 failure analysis</div><div class="pageno">7</div>
+</section>
+
+<!-- ============================================================ 8 FAILURE 1 -->
+<section class="slide">
+  <div class="kicker">Failure analysis · 1 of 2</div>
+  <div class="title">False negatives cluster in a few Patient-IDs</div>
+  <div class="rule"></div>
+  <img class="logo" src="assets/logo.png" alt="">
+  <img class="chart" src="assets/charts/concentration.png" style="left:.5in; top:1.42in; width:4.55in;" alt="Error concentration by Patient-ID">
+  <div class="card" style="left:5.3in; top:1.45in; width:4.1in; height:1.05in; display:flex; gap:.16in; align-items:center;"><div class="num" style="font-size:22pt; width:1.2in; flex:none; white-space:nowrap;">{{fn_top10_share}}</div><div class="txt" style="font-size:12pt;">of {{fn_total}} false negatives sit in the top 10 Patient-IDs; {{fn_ids_50}} IDs hold half. False positives are more diffuse (top 10: {{fp_top10_share}}).</div></div>
+  <div class="card" style="left:5.3in; top:2.62in; width:4.1in; height:1.12in; display:flex; gap:.16in; align-items:center;"><div class="num" style="font-size:22pt; width:1.2in; flex:none; white-space:nowrap;">Fold {{positive_fold}}</div><div class="txt" style="font-size:12pt;">{{posfold_fn}} FN and {{fn_top10_in_posfold}} of the 10 worst IDs; {{posfold_top_fn_id}} alone holds {{posfold_top_fn_share}}. Large, <b>hard</b> IDs pull pooled <i>below</i> macro.</div></div>
+  <div class="card" style="left:5.3in; top:3.86in; width:4.1in; height:1.05in; display:flex; gap:.16in; align-items:center;"><div class="num" style="font-size:22pt; width:1.2in; flex:none; white-space:nowrap;">{{conf_fn_share}}</div><div class="txt" style="font-size:12pt;">of FN are confident (p &lt; 0.1); {{conf_fp_share}} of FP have p &gt; 0.9. Brier {{brier}}, ECE {{ece}}.</div></div>
+  <div class="footer">CSA431 · M4 implementation + M5 failure analysis</div><div class="pageno">8</div>
+</section>
+
+<!-- ============================================================ 9 FAILURE 2 -->
+<section class="slide">
+  <div class="kicker">Failure analysis · 2 of 2</div>
+  <div class="title">The most confident errors may be label questions</div>
+  <div class="rule"></div>
+  <img class="logo" src="assets/logo.png" alt="">
+  <div class="abs" style="left:.6in; top:1.45in; width:5.3in;">
+    <div style="font-size:12pt; font-weight:700; color:var(--navy);">Most confident false negatives <span style="font-weight:400; color:var(--muted2);">· labelled Parasitized</span></div>
+    <div style="margin-top:.07in;">{{html:fn_tiles}}</div>
+    <div style="font-size:12pt; font-weight:700; color:var(--navy); margin-top:.16in;">Most confident false positives <span style="font-weight:400; color:var(--muted2);">· labelled Uninfected</span></div>
+    <div style="margin-top:.07in;">{{html:fp_tiles}}</div>
+    <div class="small" style="margin-top:.12in;">Official, hash-verified crops; resized, colours unaltered. p = model probability of Parasitized.</div>
+  </div>
+  <div class="abs" style="left:6.15in; top:1.45in; width:3.25in;">
+    <div style="font-size:12pt; font-weight:700; color:var(--navy);">Crops with a visible stained inclusion</div>
+    <img src="assets/charts/inclusion_bars.png" style="width:3.25in; margin-top:.06in; display:block;" alt="Inclusion visible per group">
+  </div>
+  <div class="abs" style="left:6.15in; top:3.72in; width:3.25in; height:1.18in; background:var(--coral-tint); padding:.12in .16in; font-size:11.5pt; line-height:1.3;">Blind review of {{rev_total}} crops by <b>one non-expert reviewer</b> (the AI assistant), categories fixed before viewing. <b>Observation, not cause:</b> label noise, faint parasites, border debris or reviewer error.</div>
+  <div class="footer">CSA431 · M4 implementation + M5 failure analysis</div><div class="pageno">9</div>
+</section>
+
+<!-- ============================================================ 10 LIMITATIONS -->
+<section class="slide">
+  <div class="kicker">Limitations</div>
+  <div class="title">What this result cannot tell you</div>
+  <div class="rule"></div>
+  <img class="logo" src="assets/logo.png" alt="">
+  <div class="card" style="left:.6in; top:1.45in; width:2.8in; height:1.6in;"><div class="row" style="align-items:center;"><span class="dot">1</span><span style="font-size:14pt; font-weight:700; color:var(--navy);">n = 5 folds</span></div><div class="txt" style="font-size:12.5pt; margin-top:.1in;">One grouping seed, so no significance claims. Fold signs could change with another grouping.</div></div>
+  <div class="card" style="left:3.6in; top:1.45in; width:2.8in; height:1.6in;"><div class="row" style="align-items:center;"><span class="dot">2</span><span style="font-size:14pt; font-weight:700; color:var(--navy);">Fragile verdict</span></div><div class="txt" style="font-size:12.5pt; margin-top:.1in;">Near the threshold; one ID or one eligibility rule moves it. Variants are not adopted.</div></div>
+  <div class="card" style="left:6.6in; top:1.45in; width:2.8in; height:1.6in;"><div class="row" style="align-items:center;"><span class="dot">3</span><span style="font-size:14pt; font-weight:700; color:var(--navy);">Patient-ID ≠ slide</span></div><div class="txt" style="font-size:12.5pt; margin-top:.1in;">An official mapping key; one source patient has two keys. Not a patient diagnosis.</div></div>
+  <div class="card" style="left:.6in; top:3.25in; width:2.8in; height:1.6in;"><div class="row" style="align-items:center;"><span class="dot">4</span><span style="font-size:14pt; font-weight:700; color:var(--navy);">Approximate M2</span></div><div class="txt" style="font-size:12.5pt; margin-top:.1in;">Specificity {{delta_spec}} vs published; failure modes describe this model, not paper1's.</div></div>
+  <div class="card" style="left:3.6in; top:3.25in; width:2.8in; height:1.6in;"><div class="row" style="align-items:center;"><span class="dot">5</span><span style="font-size:14pt; font-weight:700; color:var(--navy);">Image review</span></div><div class="txt" style="font-size:12.5pt; margin-top:.1in;">One non-expert reviewer, small crops, errors selected by model confidence.</div></div>
+  <div class="card" style="left:6.6in; top:3.25in; width:2.8in; height:1.6in;"><div class="row" style="align-items:center;"><span class="dot">6</span><span style="font-size:14pt; font-weight:700; color:var(--navy);">Scope</span></div><div class="txt" style="font-size:12.5pt; margin-top:.1in;">One public segmented-cell dataset, no external data. <b>No clinical claim.</b></div></div>
+  <div class="footer">CSA431 · M4 implementation + M5 failure analysis</div><div class="pageno">10</div>
+</section>
+
+<!-- ============================================================ 11 NEXT -->
+<section class="slide">
+  <div class="kicker">Next steps</div>
+  <div class="title">What we would do next</div>
+  <div class="rule"></div>
+  <img class="logo" src="assets/logo.png" alt="">
+  <div class="abs" style="left:.8in; top:1.79in; width:6.75in; height:2px; background:var(--line);"></div>
+  <div class="abs" style="left:.6in; top:1.6in; width:8.8in; display:flex; justify-content:space-between;">
+    <div style="width:2.05in;"><span class="dot" style="width:.4in; height:.4in;">1</span><div style="font-size:14pt; font-weight:700; color:var(--navy); margin-top:.14in;">Repeat the split</div><div class="txt" style="font-size:12.5pt; margin-top:.05in;">Several grouping seeds: how often does a fold flip sign?</div></div>
+    <div style="width:2.05in;"><span class="dot" style="width:.4in; height:.4in;">2</span><div style="font-size:14pt; font-weight:700; color:var(--navy); margin-top:.14in;">Expert re-review</div><div class="txt" style="font-size:12.5pt; margin-top:.05in;">A microscopist labels the confident errors, with inter-rater agreement.</div></div>
+    <div style="width:2.05in;"><span class="dot" style="width:.4in; height:.4in;">3</span><div style="font-size:14pt; font-weight:700; color:var(--navy); margin-top:.14in;">Stain-aware check</div><div class="txt" style="font-size:12.5pt; margin-top:.05in;">Do grey/blue-tinged crops come from particular slides?</div></div>
+    <div style="width:2.05in;"><span class="dot" style="width:.4in; height:.4in;">4</span><div style="font-size:14pt; font-weight:700; color:var(--navy); margin-top:.14in;">Recalibration</div><div class="txt" style="font-size:12.5pt; margin-top:.05in;">Only as its own change, with its own prediction.</div></div>
+  </div>
+  <div class="navycard" style="left:.6in; top:3.75in; width:8.8in; height:1.1in; display:flex; align-items:center; gap:.3in; padding:.2in .3in;">
+    <div class="k" style="width:1.4in; flex:none;">Each step is a<br>new intervention</div>
+    <div class="serif" style="font-size:17pt; line-height:1.3;">Whatever comes next: report pooled <i>and</i> per-Patient-ID sensitivity side by side, with the group distribution.</div>
+  </div>
+  <div class="footer">CSA431 · M4 implementation + M5 failure analysis</div><div class="pageno">11</div>
+</section>
+
+<!-- ============================================================ 12 CONCLUSION -->
+<section class="slide dark">
+  <div class="stripe"></div>
+  <div class="abs k" style="left:.8in; top:.55in;">Conclusion</div>
+  <div class="abs serif" style="left:.8in; top:.82in; font-size:28pt;">What M4 and M5 show</div>
+  <div class="abs" style="left:.8in; top:1.42in; width:1.2in; height:.06in; background:var(--coral);"></div>
+  <div class="abs" style="left:.8in; top:1.78in; width:5.6in; font-size:14pt; line-height:1.35;">
+    <div class="row" style="margin-bottom:.22in;"><span class="dot">1</span><span>Rajaraman's patient-level ResNet-50 baseline reproduced approximately: sensitivity {{m2_sens_mean}}, AUC {{m2_auc_mean}}.</span></div>
+    <div class="row" style="margin-bottom:.22in;"><span class="dot">2</span><span>One pre-registered evaluation change: right direction in {{n_negative_folds}}/{{n_folds}} folds and inside the predicted range, but short of the threshold.</span></div>
+    <div class="row"><span class="dot">3</span><span>Whether cell weighting hides or exaggerates hard groups depends on <b style="color:#fff;">which groups are large</b>. The most confident errors may be label questions.</span></div>
+  </div>
+  <div class="abs" style="left:6.8in; top:1.78in; width:2.6in; height:2.15in; background:var(--navy-2); border:1.5px solid var(--teal); padding:.2in; text-align:center;">
+    <div class="k" style="font-size:11pt;">Pre-registered verdict</div>
+    <div class="serif" style="font-size:21pt; margin-top:.18in; color:var(--coral);">{{verdict}}</div>
+    <div style="font-size:12pt; color:var(--ice); margin-top:.16in; line-height:1.35;">mean {{mean_diff_pp}}<br>rule: ≤ −1.68 pp</div>
+  </div>
+  <div class="abs" style="left:.8in; top:4.62in; font-size:13pt;">Thank you · questions welcome</div>
+  <div class="abs" style="left:.8in; top:5.0in; font-size:11pt; color:var(--muted);">Public NIH/NLM segmented-cell data; no clinical claims · paper: paper/main.pdf</div>
+  <div class="abs" style="left:9in; top:5.19in; width:.4in; text-align:right; font-size:10pt; color:var(--muted);">12</div>
+</section>
+
+</body>
+</html>

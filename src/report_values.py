@@ -113,6 +113,11 @@ def collect(root: Path) -> tuple[dict[str, tuple[object, str]], dict[str, Table]
     )
     v["m2_test_fold_sizes"] = (" / ".join(f"{n:,}" for n in folds_m2.test_samples), "str")
     v.update(preregistration_commit(root))
+    config = json.loads((root / "results" / "baseline" / "run_environment.json").read_text())["config"]
+    for key in ("image_size", "hidden_units", "epochs", "seed", "n_splits"):
+        v[f"cfg_{key}"] = (config[key], "int")
+    v["cfg_dropout"] = (config["dropout"], "str")
+    v["cfg_learning_rate"] = (config["learning_rate"], "str")
     v["m2_measured_utc"] = (baseline.measured_at_utc.iloc[0][:16].replace("T", " "), "str")
     published = _read(root, "baseline/published_baseline.csv")
     cell_level = published[published.protocol == "cell-level comparison"].set_index("metric")
@@ -217,6 +222,7 @@ def collect(root: Path) -> tuple[dict[str, tuple[object, str]], dict[str, Table]
     a2 = _read(root, "m4/ablations/a2_summary.csv").set_index("min_positive_cells")
     for k in a2.index:
         v[f"a2_k{k}_mean"] = (a2.at[k, "mean_pp"], "spp2")
+        v[f"a2_k{k}_mean_n"] = (a2.at[k, "mean_pp"], "snum2")
         v[f"a2_k{k}_kept"] = (a2.at[k, "ids_kept"], "int")
         v[f"a2_k{k}_excluded"] = (a2.at[k, "ids_excluded"], "int")
         v[f"a2_k{k}_neg"] = (a2.at[k, "n_negative"], "int")
