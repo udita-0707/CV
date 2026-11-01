@@ -1,0 +1,121 @@
+{
+  "intervention": "Patient-ID-stratified re-aggregation of the frozen M2 out-of-fold predictions (evaluation/reporting only)",
+  "pre_registration": {
+    "source": "milestones/M3/hypothesis.md",
+    "recorded": "3 October 2026 (Asia/Kolkata)",
+    "primary_metric": "per-fold Patient-ID-macro sensitivity (IDs with >= 1 Parasitized cell) minus pooled cell-level sensitivity",
+    "predicted_mean_difference_pp": [
+      -3.0,
+      -1.0
+    ],
+    "supported_if": "at least 4 of 5 paired differences negative and mean <= -1.68 pp",
+    "unsupported_if": "at least 4 of 5 paired differences positive and mean >= +1.68 pp",
+    "inconclusive_if": "neither directional rule is met, or a reuse assertion fails, or a denominator is unavailable"
+  },
+  "reuse_assertions": {
+    "passed": true,
+    "row_count": 27558,
+    "unique_relative_path": true,
+    "identical_to_fold_assignments": [
+      "filename",
+      "class_name",
+      "label",
+      "patient_id",
+      "fold"
+    ],
+    "patient_ids_in_one_fold": 201,
+    "prediction_equals_threshold_0_5": true,
+    "pooled_metrics_equal_fold_results": {
+      "tolerance": 1e-09,
+      "max_abs_difference": 1.1102230246251565e-16
+    },
+    "fold_mean_sd_equal_baseline_results": true
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "n_ids_eligible": 30,
+      "pooled": 0.953125,
+      "macro": 0.9114807523045562,
+      "difference_pp": -4.164424769544384,
+      "ci_low_pp": -7.581748145472605,
+      "ci_high_pp": -0.9312774270349565
+    },
+    {
+      "fold": 2,
+      "n_ids_eligible": 30,
+      "pooled": 0.8827561327561327,
+      "macro": 0.89724372859584,
+      "difference_pp": 1.4487595839707268,
+      "ci_low_pp": -3.8140014519541205,
+      "ci_high_pp": 6.683969864204787
+    },
+    {
+      "fold": 3,
+      "n_ids_eligible": 31,
+      "pooled": 0.9637893196781273,
+      "macro": 0.9555027505371906,
+      "difference_pp": -0.8286569140936728,
+      "ci_low_pp": -2.7211993006231063,
+      "ci_high_pp": 1.4826474461306665
+    },
+    {
+      "fold": 4,
+      "n_ids_eligible": 31,
+      "pooled": 0.9551912568306011,
+      "macro": 0.9396601047780344,
+      "difference_pp": -1.5531152052566721,
+      "ci_low_pp": -3.7917378022030728,
+      "ci_high_pp": 0.5845214851089539
+    },
+    {
+      "fold": 5,
+      "n_ids_eligible": 29,
+      "pooled": 0.9571325648414986,
+      "macro": 0.9299115778795553,
+      "difference_pp": -2.7220986961943305,
+      "ci_low_pp": -5.912514634977198,
+      "ci_high_pp": 0.07802777925559627
+    }
+  ],
+  "verdict": "INCONCLUSIVE",
+  "n_folds": 5,
+  "n_negative": 4,
+  "n_positive": 1,
+  "mean_difference_pp": -1.5639072002236665,
+  "threshold_pp": 1.68,
+  "supported_rule_met": false,
+  "unsupported_rule_met": false,
+  "reasons": [
+    "|mean| 1.564 pp < 1.68 pp",
+    "direction negative but magnitude below the threshold"
+  ],
+  "mean_within_predicted_range": true,
+  "threshold_as_written_pp": 1.68,
+  "threshold_exact_half_m2_sd_pp": 1.6790220800840001,
+  "verdict_under_exact_threshold": "INCONCLUSIVE",
+  "t_interval_95_pp": {
+    "mean": -1.5639072002236665,
+    "sd": 2.104814111310206,
+    "low": -4.1773791051488,
+    "high": 1.0495647047014667,
+    "df": 4
+  },
+  "bootstrap_95_pp_exploratory_a4": {
+    "ci_low_pp": -2.9487875820335687,
+    "ci_high_pp": -0.035100255117505835,
+    "n_resamples": 2000,
+    "seed": 42
+  },
+  "significance_testing": {
+    "performed": false,
+    "reason": "n = 5 paired folds; no test was pre-registered",
+    "min_two_sided_exact_wilcoxon_p": 0.0625
+  },
+  "inputs_sha256": {
+    "per_sample_predictions.csv": "a80cdd89a392fb8e16e85ca312bc4fd3f9a28b00268ee351a70329cbc4c2a0a8",
+    "fold_assignments.csv": "600995247b2f2c1487d14890bd7e336f90df882e57d8c2fe1a4c06f01f5b4f7e",
+    "fold_results.csv": "6b50142ccd749c1773d3f5bf7abfbec43f74b97fa22516e18a6d88c0798273cf",
+    "baseline_results.csv": "1b6bd0ce6c0fd238a8b7d3ae29af7bb39936c708fae16c31ab39c39c9b0b40a7"
+  }
+}

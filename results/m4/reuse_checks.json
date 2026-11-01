@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "row_count": 27558,
+  "unique_relative_path": true,
+  "identical_to_fold_assignments": [
+    "filename",
+    "class_name",
+    "label",
+    "patient_id",
+    "fold"
+  ],
+  "patient_ids_in_one_fold": 201,
+  "prediction_equals_threshold_0_5": true,
+  "pooled_metrics_equal_fold_results": {
+    "tolerance": 1e-09,
+    "max_abs_difference": 1.1102230246251565e-16
+  },
+  "fold_mean_sd_equal_baseline_results": true,
+  "inputs_sha256": {
+    "per_sample_predictions.csv": "a80cdd89a392fb8e16e85ca312bc4fd3f9a28b00268ee351a70329cbc4c2a0a8",
+    "fold_assignments.csv": "600995247b2f2c1487d14890bd7e336f90df882e57d8c2fe1a4c06f01f5b4f7e",
+    "fold_results.csv": "6b50142ccd749c1773d3f5bf7abfbec43f74b97fa22516e18a6d88c0798273cf",
+    "baseline_results.csv": "1b6bd0ce6c0fd238a8b7d3ae29af7bb39936c708fae16c31ab39c39c9b0b40a7"
+  }
+}
