@@ -1,0 +1,44 @@
+{
+  "record": "results/baseline/dataset_source.json",
+  "record_archive_path": "reproduction/data/raw/cell_images.zip",
+  "resolved_raw_dir": "data/raw",
+  "config_change_needed": false,
+  "files": {
+    "archive": {
+      "path": "data/raw/cell_images.zip",
+      "url": "https://data.lhncbc.nlm.nih.gov/public/Malaria/cell_images.zip",
+      "present": true,
+      "fetched_this_run": false,
+      "sha256": "0a949556b2414159b5100192609805376654c4266d8d187be9b1922fad43c668",
+      "expected_sha256": "0a949556b2414159b5100192609805376654c4266d8d187be9b1922fad43c668",
+      "matches_record": true
+    },
+    "parasitized_mapping": {
+      "path": "data/raw/patientid_cellmapping_parasitized.csv",
+      "url": "https://data.lhncbc.nlm.nih.gov/public/Malaria/patientid_cellmapping_parasitized.csv",
+      "present": true,
+      "fetched_this_run": false,
+      "sha256": "d0367e513397404e980baee2a641bce9ce329a22e62ea9007962dfca2f8418d3",
+      "expected_sha256": "d0367e513397404e980baee2a641bce9ce329a22e62ea9007962dfca2f8418d3",
+      "matches_record": true
+    },
+    "uninfected_mapping": {
+      "path": "data/raw/patientid_cellmapping_uninfected.csv",
+      "url": "https://data.lhncbc.nlm.nih.gov/public/Malaria/patientid_cellmapping_uninfected.csv",
+      "present": true,
+      "fetched_this_run": false,
+      "sha256": "a8577b21e7154724f4bbd18326218e2c63a99b22ab372b79a7530d36df6dab78",
+      "expected_sha256": "a8577b21e7154724f4bbd18326218e2c63a99b22ab372b79a7530d36df6dab78",
+      "matches_record": true
+    }
+  },
+  "images": {
+    "manifest_rows": 27558,
+    "verified": 27558,
+    "missing": 0,
+    "sha256_mismatch": 0,
+    "examples": []
+  },
+  "passed": true,
+  "images_passed": true
+}

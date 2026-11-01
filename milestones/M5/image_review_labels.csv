@@ -1,0 +1,97 @@
+review_id,inclusion_visible,pale_or_atypical_stain,blur_or_low_contrast,segmentation_artefact,note
+R01,yes,0,0,0,small purple dot near top centre
+R02,unclear,1,0,0,grey-green cell; small purple fragment at lower-left border
+R03,no,1,0,0,uniform grey-lavender
+R04,no,0,0,1,cell cut off / crescent-shaped crop
+R05,yes,1,0,1,large elongated purple object at top-left edge; may be neighbouring object
+R06,yes,0,0,0,small dark-rimmed ring with pale centre
+R07,unclear,1,0,0,faint tiny purple marks at right edge
+R08,yes,0,0,0,large irregular magenta body
+R09,yes,0,0,1,jagged misshapen outline; purple body at top-right edge
+R10,yes,0,0,0,elongated magenta streak left of centre
+R11,no,1,0,0,uniform grey-blue
+R12,yes,0,0,0,purple blob at right plus dark dot below
+R13,yes,1,0,0,large blue-purple body on grey cell
+R14,yes,1,0,1,saturated magenta cell with jagged outline; dark purple at top
+R15,no,1,0,0,uniform grey-lavender
+R16,no,1,0,0,uniform blue
+R17,no,1,0,0,grey with bright pale centre
+R18,yes,0,0,0,two dark purple dots
+R19,unclear,1,0,0,small purple marks on lower border
+R20,no,0,0,0,uniform pink-tan
+R21,no,1,0,1,mauve-grey cell with jagged right edge
+R22,yes,0,0,0,small magenta squiggle at centre
+R23,yes,1,0,1,large purple-blue body with overlapping structure at top-left
+R24,yes,0,0,0,small magenta streak at left
+R25,unclear,1,0,0,tiny purple speck on bottom border
+R26,yes,0,0,0,elongated magenta body at lower left
+R27,yes,0,0,0,small dark magenta dot on pale ring
+R28,yes,0,0,0,dark-rimmed refractile ring-like object near centre
+R29,no,0,0,0,uniform pink-tan
+R30,no,0,0,1,irregular notched outline at left
+R31,yes,1,0,1,small central purple streak; large purple body protruding at bottom edge
+R32,no,1,0,1,flat cut-off lower edge
+R33,no,0,0,0,uniform pink-tan with pale centre
+R34,yes,1,0,1,saturated jagged crop with several magenta fragments
+R35,unclear,0,0,0,faint small mark at top right
+R36,yes,0,0,0,several small ring-like bodies along right edge
+R37,yes,1,0,1,large purple body protruding at lower-left edge
+R38,yes,1,1,0,very pale washed-out cell with small purple body lower left
+R39,no,1,0,0,dark mauve cell with pale centre
+R40,no,1,0,0,uniform grey-mauve
+R41,no,1,0,1,saturated magenta; missing notch at right and ragged lower edge
+R42,yes,1,0,0,dark blue-purple cell; small dark dot at right edge
+R43,no,0,0,0,mauve-pink with pale centre
+R44,no,1,0,0,uniform grey-blue
+R45,yes,0,0,0,two small magenta bodies
+R46,no,1,0,1,pale beige cell with cut-off lower-left
+R47,no,1,0,0,deep saturated magenta with pale centre
+R48,no,1,0,0,very pale uniform grey
+R49,unclear,0,0,0,faint small pinkish mark left of centre
+R50,no,0,0,0,near-uniform pink-tan
+R51,no,1,0,0,uniform grey-lavender
+R52,no,1,0,0,uniform dark lavender-blue
+R53,yes,0,0,0,small dark magenta dot at right
+R54,yes,0,0,0,dark purple body with ring at centre
+R55,unclear,0,0,0,pale central area with faint pink-red marks
+R56,yes,1,0,0,small curved purple body at centre
+R57,no,1,0,0,tiny pale speck at top-left border (not purple)
+R58,no,1,0,0,very pale uniform grey
+R59,yes,0,0,0,small magenta dot beside pale ring
+R60,no,1,0,0,uniform grey-blue
+R61,yes,1,0,0,purple body inside pale area near bottom
+R62,yes,0,0,0,magenta-outlined ring at centre-left
+R63,yes,1,0,0,saturated magenta crop with several dark purple dots
+R64,yes,1,0,1,large purple body protruding below the cell
+R65,no,1,0,0,dark grey-purple uniform
+R66,yes,1,0,0,small dark purple body upper left
+R67,yes,1,0,1,purple streak plus branching structure protruding at bottom
+R68,no,0,0,1,angular cut polygonal crop
+R69,unclear,0,0,0,horizontal pink linear band at lower part (fold-like)
+R70,no,0,0,0,uniform mauve-pink
+R71,yes,1,0,0,small purple dot at centre and tiny dot at right
+R72,unclear,0,0,0,faint pinkish-purple streaks on lumpy outline
+R73,yes,0,0,0,dark magenta body at right
+R74,yes,0,0,1,purple bar on jagged top border; small central dot
+R75,unclear,0,0,0,tiny faint speck lower left
+R76,yes,0,0,1,magenta body at right edge; protrusion at lower right
+R77,yes,0,0,1,purple body at top left on jagged edge
+R78,no,1,0,0,uniform grey-lavender
+R79,no,0,0,0,uniform pink with pale spot
+R80,no,1,0,0,pale grey-mauve uniform
+R81,no,0,0,0,uniform pink-tan
+R82,yes,0,0,0,irregular magenta streaks around pale ring
+R83,yes,1,0,0,blue cell with bright centre; small purple dot lower left
+R84,no,1,0,0,dark grey-green uniform
+R85,yes,1,0,0,small purple body left and ring-like body right
+R86,yes,0,0,0,elongated dark magenta streak
+R87,yes,0,0,1,dark ring-like body at left edge; fragment on top border
+R88,no,1,0,0,uniform lavender-blue
+R89,yes,0,0,1,two purple bodies; angular crop with protrusion
+R90,unclear,1,0,0,very pale; tiny purple speck lower left
+R91,no,1,0,1,cut diagonal lower-right edge
+R92,yes,1,0,1,pale jagged crop; purple body at left edge
+R93,yes,0,0,1,two large magenta bodies protruding at lower right
+R94,yes,0,0,0,purple-outlined irregular structure lower right
+R95,no,1,0,0,blue-lavender with bright centre
+R96,no,0,0,0,uniform tan-mauve with pale centre

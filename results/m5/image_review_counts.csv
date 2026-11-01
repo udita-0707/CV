@@ -1,0 +1,5 @@
+group,n_cells,n_patient_ids,inclusion_yes,inclusion_no,inclusion_unclear,pale_or_atypical_stain,blur_or_low_contrast,segmentation_artefact,possible_label_noise
+top_false_negative,24,17,2,17,5,20,0,4,17
+top_false_positive,24,22,21,0,3,8,0,8,21
+random_true_positive,24,19,24,0,0,9,1,8,0
+random_true_negative,24,24,0,21,3,13,0,4,0
