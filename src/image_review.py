@@ -22,9 +22,9 @@ INK_SECONDARY = (82, 81, 78)
 def verify_official_dataset(root: Path, fetch_missing: bool = True) -> dict:
     """Check the archive, both mappings and every PNG against the frozen M2 hash records.
 
-    ``src.dataset.ensure_official_dataset`` is not called because, after the repository
-    restructure, it would write a fresh ``results/dataset_source.json``; its URLs, download
-    helper and hash function are reused instead and compared with the frozen record.
+    ``src.dataset.ensure_official_dataset`` is not called because it rewrites the frozen
+    ``results/baseline/dataset_source.json`` with a new timestamp; its URLs, download helper
+    and hash function are reused instead and compared with the frozen record.
     """
     record = json.loads((root / "results" / "baseline" / "dataset_source.json").read_text())
     expected_urls = {"archive": DATASET_URL, "parasitized_mapping": PARASITIZED_MAPPING_URL, "uninfected_mapping": UNINFECTED_MAPPING_URL}
@@ -136,7 +136,7 @@ def blind_review_grids(selected: pd.DataFrame, raw: Path, out_dir: Path, per_gri
     paths = []
     for start in range(0, len(selected), per_grid):
         chunk = selected.iloc[start:start + per_grid]
-        name = f"blind_review_{chunk.review_id.iloc[0]}_{chunk.review_id.iloc[-1]}.png"
+        name = f"blind_review_{chunk.review_id.iloc[0]}_{chunk.review_id.iloc[-1]}.png".lower()
         paths.append(make_grid([raw / p for p in chunk.relative_path], list(chunk.review_id), out_dir / name, columns, tile=160))
     return paths
 

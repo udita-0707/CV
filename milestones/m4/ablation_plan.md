@@ -5,7 +5,7 @@ primary paired differences were inspected.
 
 **Status of these analyses:** *exploratory. They do not change the primary
 verdict.* M3 pre-registered one primary comparison and its decision rule
-(`../M3/hypothesis.md`); it did not pre-register ablations. The course
+(`../m3/hypothesis.md`); it did not pre-register ablations. The course
 handout requires ablations, so the ones below vary **only the aggregation**
 of the frozen M2 out-of-fold predictions. The ResNet-50 features, classifier
 states, probabilities, 0.5 threshold, labels, Patient-IDs and folds are

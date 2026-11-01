@@ -3,7 +3,7 @@
 Run from the repository root: ``.venv/bin/python -m src.run_m5``. Reads
 ``results/baseline/`` and the official images under ``data/raw/``; writes only
 ``results/m5/``. Blind review labels are read from
-``milestones/M5/image_review_labels.csv`` when that file exists.
+``milestones/m5/image_review_labels.csv`` when that file exists.
 """
 from __future__ import annotations
 
@@ -20,7 +20,7 @@ from .config import project_root, raw_data_dir
 from .run_m4 import load_frozen_inputs
 
 TOP_N = 10
-REVIEW_LABELS = Path("milestones") / "M5" / "image_review_labels.csv"
+REVIEW_LABELS = Path("milestones") / "m5" / "image_review_labels.csv"
 
 
 def m5_dir(root: Path) -> Path:

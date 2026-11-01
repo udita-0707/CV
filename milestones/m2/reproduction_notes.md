@@ -3,7 +3,7 @@
 ## Evidence boundary
 
 The base-paper facts below come only from `../../papers/paper1_rajaraman.md`, with
-M1 terminology checked against `../../presentation/M1/SLIDES.md` and
+M1 terminology checked against `../../presentation/m1/slides_outline.md` and
 `../../literature/synthesis.md`. The supplied
 paper1 file is a faithful project summary rather than the paper PDF/table
 appendix, so a detail absent from that file is marked **not specified in the

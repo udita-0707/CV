@@ -18,7 +18,7 @@ from .evaluation import binary_metrics
 EXPECTED_ROWS = 27_558
 N_FOLDS = 5
 THRESHOLD = 0.5
-DECISION_THRESHOLD_PP = 1.68  # as written in milestones/M3/hypothesis.md
+DECISION_THRESHOLD_PP = 1.68  # as written in milestones/m3/hypothesis.md
 MIN_DIRECTIONAL_FOLDS = 4
 POOLED_METRICS = ("accuracy", "sensitivity_recall", "specificity", "auc", "f1")
 COUNT_COLUMNS = ("true_negative", "false_positive", "false_negative", "true_positive")

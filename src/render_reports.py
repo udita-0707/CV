@@ -13,10 +13,10 @@ from .config import project_root
 from .report_values import Table, collect, fmt, table_markdown
 
 TEMPLATES = {
-    "milestones/M4/README.tmpl.md": "milestones/M4/README.md",
-    "milestones/M5/failure_analysis.tmpl.md": "milestones/M5/failure_analysis.md",
-    "presentation/M4_M5/SLIDES.tmpl.md": "presentation/M4_M5/SLIDES.md",
-    "presentation/M4_M5/viva_prep.tmpl.md": "presentation/M4_M5/viva_prep.md",
+    "milestones/m4/README.tmpl.md": "milestones/m4/README.md",
+    "milestones/m5/failure_analysis.tmpl.md": "milestones/m5/failure_analysis.md",
+    "presentation/m4_m5/slides_outline.tmpl.md": "presentation/m4_m5/slides_outline.md",
+    "presentation/m4_m5/viva_prep.tmpl.md": "presentation/m4_m5/viva_prep.md",  # local only (gitignored)
 }
 PLACEHOLDER = re.compile(r"\{\{\s*(table:)?([A-Za-z0-9_]+)\s*\}\}")
 

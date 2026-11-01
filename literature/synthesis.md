@@ -1,6 +1,6 @@
 # Rubric + gap synthesis (after slides)
 
-## Rubric (from CV_Student_Handout_Project.docx.pdf — 1 page)
+## Rubric (from the course handout, 1 page; `docs/course_handout.docx`, kept locally and not committed)
 No numeric weightage is printed on the handout.
 
 Graded around:

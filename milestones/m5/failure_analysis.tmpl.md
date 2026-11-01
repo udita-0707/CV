@@ -97,13 +97,12 @@ in any fold is {{sd_reduction_share_max}}.
 again with the project's downloader. The archive and both mapping files
 match their recorded SHA-256 (archive `{{archive_sha_short}}…`), and all
 {{images_verified}} local PNGs match their manifest SHA-256 (status
-{{dataset_verified}}; `results/m5/dataset_verification.json`). No config
-path change was needed: `src/config.raw_data_dir` already resolves to
-`data/raw/` after the restructure. The frozen record's `archive_path`
-still says `reproduction/data/raw/…`; it was left unedited.
-`src.dataset.ensure_official_dataset` was not called directly, because
-after the restructure it would write a new `results/dataset_source.json`.
-Its URLs, download helper and hash function were reused instead.
+{{dataset_verified}}; `results/m5/dataset_verification.json`).
+`src/config.raw_data_dir` resolves to `data/raw/`; the frozen record's
+`archive_path` still says `reproduction/data/raw/…` and was left unedited.
+`src.dataset.ensure_official_dataset` was not called directly, because it
+rewrites the frozen `results/baseline/dataset_source.json` with a new
+timestamp. Its URLs, download helper and hash function were reused instead.
 
 **Protocol** (`image_review_protocol.md`, written before viewing). One
 reviewer labelled {{rev_total}} crops: the AI assistant running this

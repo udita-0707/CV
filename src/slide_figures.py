@@ -26,7 +26,7 @@ SMALL_ID_CELLS = 10
 
 
 def use_deck_style(font_dir: Path) -> None:
-    for path in sorted(font_dir.glob("Carlito-*.ttf")):
+    for path in sorted(font_dir.glob("carlito_*.ttf")):
         font_manager.fontManager.addfont(str(path))
     plt.rcParams.update(
         {

@@ -17,6 +17,7 @@
 \newcommand{\val}[1]{\@ifundefined{val@#1}{\PackageError{values}{Undefined value #1}{Run paper/make_tables.py}}{\csname val@#1\endcsname}}
 \makeatother
 \input{generated/values.tex}
+\graphicspath{{../results/m4/figures/}{../results/m5/figures/}}
 \newcommand{\pid}{Patient-ID}
 
 \begin{document}
@@ -63,7 +64,7 @@ Following~\cite{rajaraman2018}, a frozen ImageNet ResNet-50 (torchvision \texttt
 \end{table}
 
 \section{Hypothesis and Prediction}
-The hypothesis and decision rule were recorded in \texttt{milestones/M3/hypothesis.md}, dated \emph{``3 October 2026 (Asia/Kolkata), after the saved M2 baseline and before any M4 code.''} The repository history agrees: the file was first committed in \texttt{\val{prereg_commit}} on \val{prereg_commit_date}, after the M2 metrics were written (\val{m2_measured_utc} UTC). The record reads:
+The hypothesis and decision rule were recorded in \texttt{milestones/m3/hypothesis.md}, dated \emph{``3 October 2026 (Asia/Kolkata), after the saved M2 baseline and before any M4 code.''} The repository history agrees: the file was first committed in \texttt{\val{prereg_commit}} on \val{prereg_commit_date}, after the M2 metrics were written (\val{m2_measured_utc} UTC). The record reads:
 \begin{quote}\small
 \textbf{IF} the fixed M2 out-of-fold predictions are evaluated separately for every official \pid{} within each unchanged patient-grouped fold, \textbf{THEN} \pid{}-macro sensitivity for Parasitized will be lower than the existing pooled cell-weighted sensitivity [\ldots] \textbf{BECAUSE} cells from one source group share acquisition/stain characteristics and groups contribute unequal numbers of cells.
 \end{quote}
@@ -84,14 +85,14 @@ and the primary quantity is $\Delta_f=100\,(S^{\mathrm{macro}}_f-S^{\mathrm{pool
 \section{Results}
 \begin{figure*}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/per_id_sensitivity_by_fold.png}
+\includegraphics[width=\textwidth]{per_id_sensitivity_by_fold.png}
 \caption{Sensitivity of every \pid{} with Parasitized cells, per test fold. Orange bar: pooled (cell-weighted, M2) sensitivity. Black diamond: \pid{}-macro. Hollow markers: \pid{}s with fewer than 10 Parasitized cells.}
 \label{fig:perid}
 \end{figure*}
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/paired_differences.png}
+\includegraphics[width=\textwidth]{paired_differences.png}
 \caption{Macro minus pooled per fold, with 95\% cluster-bootstrap CIs (A4). The left panel is the pre-registered primary metric: the shaded band is the M3 prediction and the dashed lines are the $\pm1.68$\,pp decision threshold. Specificity and accuracy are secondary.}
 \label{fig:diffs}
 \end{figure*}
@@ -124,7 +125,7 @@ and the primary quantity is $\Delta_f=100\,(S^{\mathrm{macro}}_f-S^{\mathrm{pool
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.92\columnwidth]{figures/error_concentration.png}
+\includegraphics[width=0.92\columnwidth]{error_concentration.png}
 \caption{Cumulative share of errors held by \pid{}s ranked from most to fewest errors. Dashed: equal share.}
 \label{fig:conc}
 \end{figure}
@@ -133,7 +134,7 @@ and the primary quantity is $\Delta_f=100\,(S^{\mathrm{macro}}_f-S^{\mathrm{pool
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.85\columnwidth]{figures/reliability_diagram.png}
+\includegraphics[width=0.85\columnwidth]{reliability_diagram.png}
 \caption{Reliability diagram of the out-of-fold probabilities (10 equal-width bins) with bin counts (log scale).}
 \label{fig:rel}
 \end{figure}
@@ -150,8 +151,8 @@ and the primary quantity is $\Delta_f=100\,(S^{\mathrm{macro}}_f-S^{\mathrm{pool
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=0.93\textwidth]{figures/grid_top_false_negatives.png}\\[2pt]
-\includegraphics[width=0.93\textwidth]{figures/grid_top_false_positives.png}
+\includegraphics[width=0.93\textwidth]{grid_top_false_negatives.png}\\[2pt]
+\includegraphics[width=0.93\textwidth]{grid_top_false_positives.png}
 \caption{Top: the 16 most confident false negatives (labelled Parasitized, lowest $p$). Bottom: the 16 most confident false positives (labelled Uninfected, highest $p$). Captions: $p$ = P(Parasitized) and the \pid{} prefix (display only). Crops are resized; colours are unaltered.}
 \label{fig:grids}
 \end{figure*}

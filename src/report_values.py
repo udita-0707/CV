@@ -70,7 +70,7 @@ def fmt(value: object, kind: str, target: str = "md") -> str:
 def preregistration_commit(root: Path) -> dict[str, tuple[str, str]]:
     """First commit that added the M3 hypothesis file, read from git history."""
     output = subprocess.run(
-        ["git", "log", "--diff-filter=A", "--format=%h|%ad", "--date=format:%d %b %Y %H:%M %z", "--", "milestones/M3/hypothesis.md"],
+        ["git", "log", "--follow", "--diff-filter=A", "--format=%h|%ad", "--date=format:%d %b %Y %H:%M %z", "--", "milestones/m3/hypothesis.md"],
         cwd=root, capture_output=True, text=True, check=True,
     ).stdout.strip().splitlines()
     commit, date = output[-1].split("|")

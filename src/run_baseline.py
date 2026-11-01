@@ -14,7 +14,7 @@ import pandas as pd
 import torch
 from torch.utils.data import DataLoader
 
-from .config import RunConfig, raw_data_dir, results_dir
+from .config import RunConfig, project_root, raw_data_dir, results_dir
 from .dataset import audit_dataset, load_manifest
 from .evaluation import binary_metrics, save_figures
 from .model import CellImageDataset, build_feature_extractor, select_device
@@ -223,7 +223,7 @@ def run_baseline(root: Path, cfg: RunConfig | None = None) -> dict:
 
 
 def main() -> None:
-    root = Path(__file__).resolve().parents[2]
+    root = project_root()
     result = run_baseline(root)
     print("M2 baseline complete")
     for row in result["baseline"].itertuples(index=False):

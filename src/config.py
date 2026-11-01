@@ -36,7 +36,7 @@ def raw_data_dir(root: Path | None = None) -> Path:
 
 
 def results_dir(root: Path | None = None) -> Path:
-    return reproduction_root(root) / "results"
+    return reproduction_root(root) / "results" / "baseline"
 
 
 def logs_dir(root: Path | None = None) -> Path:

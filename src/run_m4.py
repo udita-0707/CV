@@ -17,7 +17,7 @@ from .config import project_root
 from .dataset import sha256
 
 FROZEN_INPUTS = ("per_sample_predictions.csv", "fold_assignments.csv", "fold_results.csv", "baseline_results.csv")
-PREDICTION_BAND_PP = (-3.0, -1.0)  # milestones/M3/hypothesis.md: "approximately -1 to -3 percentage points"
+PREDICTION_BAND_PP = (-3.0, -1.0)  # milestones/m3/hypothesis.md: "approximately -1 to -3 percentage points"
 BOOTSTRAP_RESAMPLES = 2_000
 BOOTSTRAP_SEED = 42
 ELIGIBILITY_MINIMUMS = (1, 10, 25)
@@ -95,7 +95,7 @@ def run_m4(root: Path | None = None) -> dict:
     )
     secondary.to_csv(out / "secondary_heterogeneity.csv", index=False)
 
-    # ---- exploratory ablations (milestones/M4/ablation_plan.md); none of them feeds the verdict
+    # ---- exploratory ablations (milestones/m4/ablation_plan.md); none of them feeds the verdict
     a1 = ps.a1_weighting(patients, folds)
     a1.to_csv(out / "ablations" / "a1_weighting.csv", index=False)
     a2 = ps.a2_eligibility(patients, folds, ELIGIBILITY_MINIMUMS)
@@ -131,7 +131,7 @@ def run_m4(root: Path | None = None) -> dict:
     payload = {
         "intervention": "Patient-ID-stratified re-aggregation of the frozen M2 out-of-fold predictions (evaluation/reporting only)",
         "pre_registration": {
-            "source": "milestones/M3/hypothesis.md",
+            "source": "milestones/m3/hypothesis.md",
             "recorded": "3 October 2026 (Asia/Kolkata)",
             "primary_metric": "per-fold Patient-ID-macro sensitivity (IDs with >= 1 Parasitized cell) minus pooled cell-level sensitivity",
             "predicted_mean_difference_pp": list(PREDICTION_BAND_PP),

@@ -32,7 +32,7 @@ Figures are under `results/m4/figures/` and `results/m5/figures/`; the paper is
 - **IF** the frozen M2 predictions are summarised per Patient-ID within each fold, **THEN** Patient-ID-macro sensitivity < pooled sensitivity, **BECAUSE** groups share appearance and contribute very unequal cell counts
 - Predicted mean macro − pooled: about −1 to −3 pp
 - Rule: SUPPORTED if ≥ 4/5 folds negative **and** mean ≤ −1.68 pp (half the M2 sensitivity fold SD, {{m2_sens_sd}}); UNSUPPORTED = mirror; else INCONCLUSIVE
-- Proof of timing: `milestones/M3/hypothesis.md` first committed in `{{prereg_commit}}` ({{prereg_commit_date}}), after the M2 metrics were written
+- Proof of timing: `milestones/m3/hypothesis.md` first committed in `{{prereg_commit}}` ({{prereg_commit_date}}), after the M2 metrics were written
 
 ## SLIDE 5 — Method: the one change
 - Same model, features, probabilities, 0.5 threshold, labels, folds: **only the aggregation changes**

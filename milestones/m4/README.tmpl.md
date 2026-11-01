@@ -34,7 +34,7 @@ specificity is defined for all of them.
 
 ## Verdict: {{verdict}}
 
-Pre-registered rule (`../M3/hypothesis.md`, recorded 3 October 2026):
+Pre-registered rule (`../m3/hypothesis.md`, recorded 3 October 2026):
 SUPPORTED if at least 4 of 5 paired differences (macro − pooled sensitivity)
 are negative **and** their mean is ≤ −1.68 pp. UNSUPPORTED is the mirror
 rule. Anything else is INCONCLUSIVE.

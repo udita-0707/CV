@@ -4,7 +4,7 @@ Values and tables come from ``src.report_values`` (files under ``results/``), ch
 from ``src.slide_figures``, and cell crops from the official images (copied into
 ``assets/cells/`` so the deck rebuilds without the dataset). The HTML is rendered
 from ``slides.tmpl.html`` and printed to PDF with headless Chrome.
-Run from the repository root: ``.venv/bin/python presentation/M4_M5/build_slides.py``.
+Run from the repository root: ``.venv/bin/python presentation/m4_m5/build_slides.py``.
 """
 from __future__ import annotations
 
