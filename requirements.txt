@@ -2,7 +2,9 @@ numpy
 pandas
 Pillow
 scikit-learn
+scipy
 matplotlib
 torch
 torchvision
 jupyter
+pytest
